@@ -3,215 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ডোনেশন - জামিয়া মাহমুদিয়া যাত্রাবাড়ী ঢাকা</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <title>ডোনেশন পেজ - হাজী ওমর আলী কমপ্লেক্স</title>
     <style>
-        :root {
-            --primary-bg: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --accent-color: #38bdf8;
-            --bkash-color: #e2136e;
-            --nagad-color: #f7941d;
-            --bank-color: #10b981;
-            --text-main: #f8fafc;
-        }
-
         body {
-            font-family: 'SolaimanLipi', 'Hind Siliguri', sans-serif;
-            background-color: var(--primary-bg);
-            background-image: radial-gradient(circle at top right, #1e293b, #0f172a);
-            color: var(--text-main);
-            margin: 0;
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: white;
             display: flex;
             justify-content: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 480px;
-            width: 100%;
-        }
-
-        /* হেডার সেকশন */
-        .header {
-            text-align: center;
-            padding: 30px 15px;
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        h1 {
-            font-size: 22px;
-            margin: 0;
-            color: #fff;
-            white-space: nowrap; /* এক লাইনে রাখার জন্য */
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .safe-tag {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 15px;
-            background: rgba(16, 185, 129, 0.2);
-            color: #34d399;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* পেমেন্ট কার্ড */
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 18px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent-color);
-        }
-
-        .card-title {
-            display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 18px;
-            font-weight: 700;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #1e293b;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .header-title {
+            font-size: 22px;
+            font-weight: bold;
             margin-bottom: 15px;
         }
+        .status-badge {
+            display: inline-block;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        .payment-box {
+            background-color: #0f172a;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            text-align: left;
+        }
+        .method-label {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .dot {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .bkash-dot { background-color: #e2136e; }
+        .nagad-dot { background-color: #f7941d; }
 
-        /* নম্বর বক্স */
-        .number-display {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            border-radius: 12px;
+        .number-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px dashed rgba(255, 255, 255, 0.2);
+            background-color: transparent;
+            border: 1px dashed #334155;
+            padding: 10px 15px;
+            border-radius: 10px;
         }
-
         .number-text {
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 20px;
             letter-spacing: 1px;
-            color: #fff;
+            font-weight: 600;
         }
-
         .copy-btn {
-            background: var(--accent-color);
+            background-color: #38bdf8;
             color: #0f172a;
             border: none;
-            padding: 8px 15px;
+            padding: 8px 18px;
             border-radius: 8px;
-            font-weight: 700;
+            font-weight: bold;
             cursor: pointer;
-            font-size: 14px;
             transition: 0.3s;
         }
-
-        .copy-btn:hover { opacity: 0.9; }
-
-        /* ব্যাংক ডিটেইলস */
-        .bank-info {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #cbd5e1;
+        .copy-btn:active {
+            transform: scale(0.95);
         }
-        
-        .bank-row {
-            margin-bottom: 8px;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 4px;
-        }
-
-        .label { color: #94a3b8; }
-
-        footer {
-            text-align: center;
-            font-size: 13px;
-            color: #64748b;
-            margin-top: 30px;
-        }
-
-        /* আইকন কালার */
-        .dot-bkash { color: var(--bkash-color); }
-        .dot-nagad { color: var(--nagad-color); }
-        .dot-bank { color: var(--bank-color); }
-
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>জামিয়া মাহমুদিয়া যাত্রাবাড়ী ঢাকা</h1>
-        <div class="safe-tag">✓ নিরাপদ পেমেন্ট সিস্টেম</div>
-    </div>
+    <div class="header-title">হাজী ওমর আলী কমপ্লেক্স</div>
+    <div class="status-badge">✓ নিরাপদ পেমেন্ট সিস্টেম</div>
 
-    <div class="card">
-        <div class="card-title">
-            <span class="dot-bkash">●</span> বিকাশ (পার্সোনাল)
+    <div class="payment-box">
+        <div class="method-label">
+            <span class="dot bkash-dot"></span> বিকাশ (পার্সোনাল)
         </div>
-        <div class="number-display">
-            <span class="number-text" id="bkash-num">01719012015</span>
-            <button class="copy-btn" onclick="copyText('bkash-num')">কপি</button>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-title">
-            <span class="dot-nagad">●</span> নগদ (পার্সোনাল)
-        </div>
-        <div class="number-display">
-            <span class="number-text" id="nagad-num">01719012015</span>
-            <button class="copy-btn" onclick="copyText('nagad-num')">কপি</button>
+        <div class="number-container">
+            <span class="number-text" id="bkashNum">01719012015</span>
+            <button class="copy-btn" onclick="copyNumber('bkashNum')">কপি</button>
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-title">
-            <span class="dot-bank">🏦</span> ব্যাংক অ্যাকাউন্ট ডিটেইলস
+    <div class="payment-box">
+        <div class="method-label">
+            <span class="dot nagad-dot"></span> নগদ (পার্সোনাল)
         </div>
-        <div class="bank-info">
-            <div class="bank-row"><span class="label">NAME:</span> <strong>JAMIA MAHMUDIA JATRABARI DHAKA</strong></div>
-            <div class="bank-row"><span class="label">BRANCH:</span> <strong>KAJLA BHANGA PRESS SUB BR</strong></div>
-            <div class="bank-row"><span class="label">ROUTING:</span> <strong>015273222</strong></div>
-            <div style="margin-top: 15px;">
-                <span class="label">ACCOUNT NO:</span>
-                <div class="number-display" style="margin-top: 5px;">
-                    <span class="number-text" id="bank-acc" style="font-size: 18px;">4361020015365</span>
-                    <button class="copy-btn" onclick="copyText('bank-acc')">কপি</button>
-                </div>
-            </div>
+        <div class="number-container">
+            <span class="number-text" id="nagadNum">01719012015</span>
+            <button class="copy-btn" onclick="copyNumber('nagadNum')">কপি</button>
         </div>
     </div>
-
-    <footer>
-        প্রয়োজনে যোগাযোগ করুন: ০১৭১৯০১২০১৫<br>
-        © ২০২৬ জামিয়া মাহমুদিয়া
-    </footer>
 </div>
 
 <script>
-    function copyText(id) {
-        var text = document.getElementById(id).innerText;
-        navigator.clipboard.writeText(text).then(function() {
-            alert("নম্বরটি কপি করা হয়েছে: " + text);
+    function copyNumber(id) {
+        const number = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(number).then(() => {
+            alert("নাম্বারটি কপি হয়েছে: " + number);
         });
     }
 </script>
